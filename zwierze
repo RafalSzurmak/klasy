@@ -1,0 +1,74 @@
+class Zwierze():
+    def __init__(self, wiek, imie):
+        self.wiek = wiek
+        self.imie = imie
+    def wydajDzwiek(self):
+        print(f"{self.imie} wydaje dzwiek")
+    def jedz(self):
+        print(f"{self.imie} je")
+
+
+zwierz1 = Zwierze(8, "Azor")
+zwierz1.wydajDzwiek()
+zwierz1.jedz()
+print("-"*50)
+
+class Pies(Zwierze):
+    def __init__(self, wiek, imie,rasa):
+        super().__init__(wiek, imie,)
+        self.rasa = rasa
+
+
+    def wypiszRase(self):
+        print(f"rasa = {self.rasa}")
+
+class Kot(Zwierze):
+    osobowosc = "ZŁY" # <- można tak
+    def __init__(self, wiek, imie):
+        super().__init__(wiek, imie)
+        self.rasa = "Pers" # <- jak i tak
+       
+    def wypiszRase(self):
+        print(f"rasa = {self.rasa}")     
+
+class Tygrys(Kot):
+    def __init__(self, wiek, imie):
+        self.wiek = wiek
+        self.imie = imie
+    def wydajDzwiek(self):
+        print(f"{self.imie} wydaje dzwiek")
+    def jedz(self):
+        print(f"{self.imie} je")         
+
+
+
+class Lew(Tygrys):
+    def __init__(self, wiek, imie):
+        self.wiek = wiek
+        self.imie = imie
+    def wydajDzwiek(self):
+        print(f"{self.imie} wydaje dzwiek")
+    def jedz(self):
+        print(f"{self.imie} je")         
+
+class Wilk(Pies):
+    def __init__(self, wiek, imie):
+        self.wiek = wiek
+        self.imie = imie
+    def wydajDzwiek(self):
+        print(f"{self.imie} wydaje dzwiek")
+    def jedz(self):
+        print(f"{self.imie} je")                 
+
+
+
+pies1 = Pies(3, "Gaja", "Mops")
+pies1.wydajDzwiek()
+pies1.wypiszRase()
+print("-"*50)
+kot1 = Kot(5,"Alex")
+kot1.wydajDzwiek()
+kot1.wypiszRase()
+print(kot1.osobowosc)
+print("-"*50)
+
